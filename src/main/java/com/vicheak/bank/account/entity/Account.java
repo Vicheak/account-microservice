@@ -2,8 +2,6 @@ package com.vicheak.bank.account.entity;
 
 import java.time.LocalDate;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
