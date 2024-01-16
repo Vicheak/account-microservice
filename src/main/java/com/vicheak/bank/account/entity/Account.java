@@ -6,17 +6,20 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
-//@Document(collection = "accounts")
 @Entity
 @Data
 public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long accountNumber;
-	private Long customerId;
+	@ManyToOne
+	@JoinColumn(name = "customerId")
+	private Customer customer;
 	private String accountType;
-	private String brandAddress;
+	private String branchAddress;
 	private LocalDate createDate;
 }

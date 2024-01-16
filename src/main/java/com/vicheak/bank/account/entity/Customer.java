@@ -8,7 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-//@Document(collection = "customers")
 @Entity
 @Data
 public class Customer {
