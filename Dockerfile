@@ -1,5 +1,5 @@
 # Start with base image containing java runtime
-FROM openjdk:17 AS build
+FROM openjdk:17-jdk-alpine AS build
 
 # Information of owner
 MAINTAINER vicheakbank
