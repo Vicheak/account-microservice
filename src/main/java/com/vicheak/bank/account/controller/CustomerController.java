@@ -20,7 +20,6 @@ import com.vicheak.bank.account.service.CustomerService;
 import com.vicheak.bank.account.service.client.CardFeignClient;
 import com.vicheak.bank.account.service.client.LoanFeignClient;
 
-import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
@@ -62,7 +61,8 @@ public class CustomerController {
 			@PathVariable Long customerId){
 		//System.out.println("================= Account service ================");
 		
-		log.debug("Correlation id found : {}", correlationId);
+		//log.debug("Correlation id found : {}", correlationId);
+		log.debug("fetchCustomerDetail method start");
 		
 		CustomerDetailDTO dto = new CustomerDetailDTO(); 
 		Customer customer = customerService.getById(customerId);
@@ -79,6 +79,7 @@ public class CustomerController {
 		dto.setLoans(loanInfo); 
 		dto.setCards(cardInfo); 
 		
+		log.debug("fetchCustomerDetail method end");
 		return ResponseEntity.ok(dto); 
 	}
 	
